@@ -17,16 +17,16 @@ public class TestJama {
 		
 		// matrix object left hand side
 		Matrix A = new Jama.Matrix(lhsArray);
-		A.print(1, 1);
+		A.print(9, 4); // printf("%9.4f");
 		
 		// matrix object right hand side
 		Matrix B = new Jama.Matrix(rhsArray, 2);
-		B.print(1, 1);
+		B.print(9, 4);
 		
 		// Calculate Solved Matrix x
 		Matrix x = A.solve(B);
 		
-		x.print(1, 1);
+		x.print(9, 4);
 		
 		// Print Answers
 	    System.out.println("x = " + x.get(0, 0));
