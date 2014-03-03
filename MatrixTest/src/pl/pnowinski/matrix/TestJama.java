@@ -4,9 +4,6 @@ import Jama.Matrix;
 
 public class TestJama {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		/*
 		 Solving two variable linear equation system
