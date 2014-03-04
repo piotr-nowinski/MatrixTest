@@ -12,6 +12,9 @@ package pl.pnowinski.matrix;
 [2014-03-03] piotr-nowinski:
  (1) + constructor vector Matrix(double vals[], int m)
  (2) + function get single cell of matrix
+[2014-03-04] Nowina:
+ (3) fix to function get (check input)
+ (4) + functions get count of rows and columns
  *************************************************************************/
 
 final public class Matrix {
@@ -184,6 +187,7 @@ final public class Matrix {
 
     // get single cell of matrix (2)
     public double get(int i, int j) {
+    	if (i > M || j > N) throw new RuntimeException("Illegal matrix dimensions."); //(3)	
     	return data[i][j];
     }
     
@@ -194,5 +198,15 @@ final public class Matrix {
                 System.out.printf("%9.4f ", data[i][j]);
             System.out.println();
         }
+    }
+    
+    //get row count (4)
+    public int rows(){
+    	return M;
+    }
+    
+    //get column count (4)
+    public int cols(){
+    	return N;
     }
 }

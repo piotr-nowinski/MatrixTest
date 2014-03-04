@@ -29,8 +29,8 @@ public class TestMatrix {
 		x.show();
 		
 		// Print Answers
-	    System.out.println("x = " + x.get(0, 0));
-	    System.out.println("y = " + x.get(1, 0));
+		for (int i = 0; i < x.rows(); i++)
+			System.out.printf("x%d = %f\n", i+1, x.get(i, 0));
 	}
 
 }
