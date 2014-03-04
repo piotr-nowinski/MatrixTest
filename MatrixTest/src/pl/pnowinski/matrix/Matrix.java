@@ -6,6 +6,12 @@ package pl.pnowinski.matrix;
  *
  *  A bare-bones immutable data type for M-by-N matrices.
  *
+ *  Based on http://introcs.cs.princeton.edu/java/95linear/Matrix.java.html
+ *  
+ * History
+[2014-03-03] piotr-nowinski:
+ (1) + constructor vector Matrix(double vals[], int m)
+ (2) + function get single cell of matrix
  *************************************************************************/
 
 final public class Matrix {
@@ -30,8 +36,8 @@ final public class Matrix {
                     this.data[i][j] = data[i][j];
     }
 
-    // create matrix based on vector array
-    public Matrix (double vals[], int m) {
+    // create matrix based on vector array (1)
+    public Matrix(double vals[], int m) {
         this.M = m;
         this.N = (m != 0 ? vals.length/m : 0);
         if (M*N != vals.length) {
@@ -176,6 +182,7 @@ final public class Matrix {
    
     }
 
+    // get single cell of matrix (2)
     public double get(int i, int j) {
     	return data[i][j];
     }
