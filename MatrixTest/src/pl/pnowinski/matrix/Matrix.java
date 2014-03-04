@@ -15,6 +15,7 @@ package pl.pnowinski.matrix;
 [2014-03-04] Nowina:
  (3) fix to function get (check input)
  (4) + functions get count of rows and columns
+ (5) + auto calculating of M and N
  *************************************************************************/
 
 final public class Matrix {
@@ -53,7 +54,22 @@ final public class Matrix {
            }
         }
      }
-
+    
+    
+    // create matrix based on vector array M and N auto calculated (5)
+    public Matrix(double vals[]) {
+        this.M = vals.length;
+        this.N = (M != 0 ? vals.length/M : 0);
+        if (M*N != vals.length) {
+           throw new IllegalArgumentException("Array length must be a multiple of m.");
+        }
+        this.data = new double[M][N];
+        for (int i = 0; i < M; i++) {
+           for (int j = 0; j < N; j++) {
+              data[i][j] = vals[i+j*M];
+           }
+        }
+     }
     // copy constructor
     private Matrix(Matrix A) { this(A.data); }
 

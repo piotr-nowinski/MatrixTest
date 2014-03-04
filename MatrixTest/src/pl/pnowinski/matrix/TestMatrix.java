@@ -10,8 +10,8 @@ public class TestMatrix {
 		*/
 		
 		// arrays representing equations
-		double[][] lhsArray = { { 3, 1}, { -2, 1 } };	// left hand side
-		double[] rhsArray = { 6, 3 };					// right hand side
+		double[][] lhsArray = { { 4, 3, 2}, { 5, 4, 1 }, { 2, 2, 3 }};	// left hand side
+		double[] rhsArray = { 16, 16, 15 };					// right hand side
 		
 		// matrix object left hand side
 		Matrix A = new Matrix(lhsArray);
@@ -19,7 +19,7 @@ public class TestMatrix {
 		System.out.println();
 		
 		// matrix object right hand side
-		Matrix B = new Matrix(rhsArray, 2);
+		Matrix B = new Matrix(rhsArray);
 		B.show();
 		System.out.println();
 		
